@@ -21,7 +21,7 @@ export const Settings = ({
   restart: () => void;
 }) => {
   return (
-    <div className="absolute p-2 bg-gray-700 rounded-md top-2 vertical space-y-2 left-2">
+    <div className="absolute p-2 bg-white bg-opacity-5 rounded-md top-2 vertical space-y-2 left-2">
       <ImageManager
         images={crushedImages}
         emergingImage={emergingImage}
