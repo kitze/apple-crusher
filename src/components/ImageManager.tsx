@@ -54,6 +54,34 @@ export const ImageManager = ({
                   images.setValue(newImages);
                 }}
               />
+              <label
+                htmlFor="file-upload"
+                className="cursor-pointer text-xl bg-transparent hover:bg-gray-100 p-2 rounded"
+                title="Upload image"
+              >
+                🖼️
+              </label>
+              <input
+                id="file-upload"
+                type="file"
+                className="hidden"
+                onChange={(e) => {
+                  const file = e.target.files[0];
+                  if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                      const newImages = images.value.map((im) =>
+                        im.id === i.id
+                          ? { ...im, url: e.target.result.toString() }
+                          : im,
+                      );
+                      images.setValue(newImages);
+                    };
+                    reader.readAsDataURL(file);
+                  }
+                }}
+              />
+
               <button
                 className="text-xs"
                 onClick={() => images.removeById(i.id)}
