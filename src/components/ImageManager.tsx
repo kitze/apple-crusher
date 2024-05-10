@@ -4,6 +4,7 @@ import React from "react";
 import { ImageManagerImage } from "@/components/ImageManagerImage.tsx";
 import { Button, Input } from "@nextui-org/react";
 import { IconPlus } from "@tabler/icons-react";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 export const ImageManager = ({
   images,
@@ -14,6 +15,8 @@ export const ImageManager = ({
   emergingImage: string;
   setEmergingImage: (i: string) => void;
 }) => {
+  const [imagesAnimate] = useAutoAnimate();
+
   return (
     <div className="vertical space-y-5 text-white">
       <div className="vertical space-y-2">
@@ -42,7 +45,7 @@ export const ImageManager = ({
           </Button>
         </div>
 
-        <div className="vertical center space-y-2">
+        <div ref={imagesAnimate} className="vertical center space-y-2">
           {images.value.map((i) => (
             <ImageManagerImage key={i.id} images={images} i={i} />
           ))}

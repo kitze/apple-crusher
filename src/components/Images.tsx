@@ -1,5 +1,6 @@
 import React from "react";
 import { Image } from "@/types.ts";
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 
 export const Images = ({
   images,
@@ -8,8 +9,11 @@ export const Images = ({
   images: Image[];
   imageHeight: number;
 }) => {
+  const [imagesAnimate] = useAutoAnimate();
+
   return (
     <div
+      ref={imagesAnimate}
       className="horizontal center space-x-2"
       style={{
         height: imageHeight,

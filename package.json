@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@formkit/auto-animate": "^0.8.2",
     "@nextui-org/react": "^2.3.6",
     "@tabler/icons-react": "^3.3.0",
     "clsx": "^2.1.1",

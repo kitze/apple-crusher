@@ -10,6 +10,7 @@ import {
 import { Crusher } from "@/components/Crusher.tsx";
 import { Images } from "@/components/Images.tsx";
 import { Settings } from "@/components/Settings.tsx";
+import { CrusherBar } from "@/components/CrusherBar.tsx";
 
 const crushDurationSeconds = 2;
 const fps = 60;
@@ -92,10 +93,7 @@ function App() {
         }
         imageHeight={imageHeight}
       />
-      <div
-        className="bg-gray-500 rounded-md h-12"
-        style={{ width, maxWidth: "90vw" }}
-      />
+      <CrusherBar width={width} />
     </div>
   );
 }
