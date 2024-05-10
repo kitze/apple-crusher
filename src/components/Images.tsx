@@ -9,11 +9,8 @@ export const Images = ({
   images: Image[];
   imageHeight: number;
 }) => {
-  const [imagesAnimate] = useAutoAnimate();
-
   return (
     <div
-      ref={imagesAnimate}
       className="horizontal center space-x-2"
       style={{
         height: imageHeight,
