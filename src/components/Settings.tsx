@@ -37,6 +37,7 @@ export const Settings = ({
       </div>
       <MadeBy />
       <a
+        target="_blank"
         className="text-gray-400 text-xs"
         href="https://github.com/kitze/apple-crusher"
       >

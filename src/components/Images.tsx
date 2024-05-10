@@ -17,13 +17,7 @@ export const Images = ({
       }}
     >
       {images.map((i) => (
-        <img
-          key={i.id}
-          src={i.url}
-          style={{
-            height: "100%",
-          }}
-        />
+        <img key={i.id} src={i.url} className="h-full" />
       ))}
     </div>
   );

@@ -31,6 +31,7 @@ export const Button = ({
       className={cn("bg-gray-400 text-white p-2 rounded-md text-xs", {
         "cursor-not-allowed opacity-20": disabled,
       })}
+      disabled={disabled}
       onClick={onClick}
     >
       {children}
