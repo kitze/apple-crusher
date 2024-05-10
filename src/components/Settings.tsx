@@ -22,7 +22,6 @@ export const Settings = ({
 }) => {
   return (
     <div className="absolute p-2 bg-gray-700 rounded-md top-2 vertical space-y-2 left-2">
-      <MadeBy />
       <ImageManager
         images={crushedImages}
         emergingImage={emergingImage}
@@ -36,6 +35,13 @@ export const Settings = ({
           Restart
         </Button>
       </div>
+      <MadeBy />
+      <a
+        className="text-gray-400 text-xs"
+        href="https://github.com/kitze/apple-crusher"
+      >
+        source on GitHub
+      </a>
     </div>
   );
 };
