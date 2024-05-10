@@ -1,7 +1,7 @@
 import React from "react";
-import { Input } from "@/components/base.tsx";
 import { Image } from "@/types.ts";
 import { UseArray } from "react-hanger";
+import { Button, Input, Tooltip } from "@nextui-org/react";
 
 export const ImageManagerImage = ({
   i,
@@ -13,6 +13,7 @@ export const ImageManagerImage = ({
   return (
     <div className="horizontal center space-x-2">
       <Input
+        size="sm"
         value={i.url}
         onChange={(e) => {
           const newImages = images.value.map((im) =>
@@ -26,13 +27,15 @@ export const ImageManagerImage = ({
           images.setValue(newImages);
         }}
       />
-      <label
-        htmlFor="file-upload"
-        className="cursor-pointer text-xl bg-transparent hover:bg-gray-100 p-2 rounded"
-        title="Upload image"
-      >
-        🖼️
-      </label>
+      <Tooltip content="Choose local image">
+        <label
+          htmlFor="file-upload"
+          className="cursor-pointer text-xl bg-transparent hover:bg-gray-100 p-2 rounded"
+          title="Upload image"
+        >
+          🖼️
+        </label>
+      </Tooltip>
       <input
         id="file-upload"
         type="file"
@@ -54,9 +57,16 @@ export const ImageManagerImage = ({
         }}
       />
 
-      <button className="text-xs" onClick={() => images.removeById(i.id)}>
-        🗑️
-      </button>
+      <Tooltip content="Remove image">
+        <Button
+          isIconOnly={true}
+          size="sm"
+          className="text-xs"
+          onClick={() => images.removeById(i.id)}
+        >
+          🗑️
+        </Button>
+      </Tooltip>
     </div>
   );
 };

@@ -1,9 +1,9 @@
 import React from "react";
 import { ImageManager } from "@/components/ImageManager.tsx";
-import { Button } from "@/components/base.tsx";
 import { UseArray, UseBoolean } from "react-hanger";
 import { Image } from "@/types.ts";
 import { MadeBy } from "@/components/MadeBy.tsx";
+import { Button } from "@nextui-org/react";
 
 export const Settings = ({
   crushedImages,
@@ -28,10 +28,14 @@ export const Settings = ({
         setEmergingImage={setEmergingImage}
       />
       <div className="horizontal space-x-2">
-        <Button disabled={!hasValidImages} onClick={isCrushing.toggle}>
+        <Button
+          size="sm"
+          disabled={!hasValidImages}
+          onClick={isCrushing.toggle}
+        >
           Toggle crushing
         </Button>
-        <Button disabled={!hasValidImages} onClick={restart}>
+        <Button size="sm" disabled={!hasValidImages} onClick={restart}>
           Restart
         </Button>
       </div>

@@ -1,9 +1,8 @@
 import { UseArray } from "react-hanger";
 import { Image } from "@/types.ts";
 import React from "react";
-import { Button, Input } from "@/components/base.tsx";
-import { Images } from "@/components/Images.tsx";
 import { ImageManagerImage } from "@/components/ImageManagerImage.tsx";
+import { Button, Input } from "@nextui-org/react";
 
 export const ImageManager = ({
   images,
@@ -19,6 +18,7 @@ export const ImageManager = ({
       <div className="vertical space-y-2">
         <div className="text-xs">Emerging image</div>
         <Input
+          size="sm"
           value={emergingImage}
           onChange={(e) => setEmergingImage(e.target.value)}
         />
@@ -28,6 +28,8 @@ export const ImageManager = ({
         <div className="horizontal center-v space-x-2">
           <div className="text-xs">Crushed images</div>
           <Button
+            size="sm"
+            isIconOnly={true}
             onClick={() => {
               images.push({
                 id: Math.random().toString(),
