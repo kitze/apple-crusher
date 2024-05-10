@@ -3,6 +3,7 @@ import { Image } from "@/types.ts";
 import React from "react";
 import { ImageManagerImage } from "@/components/ImageManagerImage.tsx";
 import { Button, Input } from "@nextui-org/react";
+import { IconPlus } from "@tabler/icons-react";
 
 export const ImageManager = ({
   images,
@@ -16,7 +17,7 @@ export const ImageManager = ({
   return (
     <div className="vertical space-y-5 text-white">
       <div className="vertical space-y-2">
-        <div className="text-xs">Emerging image</div>
+        <div className="text-sm">Emerging image</div>
         <Input
           size="sm"
           value={emergingImage}
@@ -26,7 +27,7 @@ export const ImageManager = ({
 
       <div className="vertical space-y-2">
         <div className="horizontal center-v space-x-2">
-          <div className="text-xs">Crushed images</div>
+          <div className="text-sm">Crushed images</div>
           <Button
             size="sm"
             isIconOnly={true}
@@ -37,7 +38,7 @@ export const ImageManager = ({
               });
             }}
           >
-            +
+            <IconPlus size={15} />
           </Button>
         </div>
 

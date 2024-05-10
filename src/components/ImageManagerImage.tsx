@@ -2,6 +2,7 @@ import React from "react";
 import { Image } from "@/types.ts";
 import { UseArray } from "react-hanger";
 import { Button, Input, Tooltip } from "@nextui-org/react";
+import { IconFolder, IconTrash } from "@tabler/icons-react";
 
 export const ImageManagerImage = ({
   i,
@@ -28,13 +29,15 @@ export const ImageManagerImage = ({
         }}
       />
       <Tooltip content="Choose local image">
-        <label
+        <Button
+          as="label"
           htmlFor="file-upload"
-          className="cursor-pointer text-xl bg-transparent hover:bg-gray-100 p-2 rounded"
           title="Upload image"
+          isIconOnly={true}
+          size="sm"
         >
-          🖼️
-        </label>
+          <IconFolder size={15} />
+        </Button>
       </Tooltip>
       <input
         id="file-upload"
@@ -64,7 +67,7 @@ export const ImageManagerImage = ({
           className="text-xs"
           onClick={() => images.removeById(i.id)}
         >
-          🗑️
+          <IconTrash size={13} />
         </Button>
       </Tooltip>
     </div>
