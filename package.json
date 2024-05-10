@@ -16,7 +16,8 @@
     "react-dom": "^18.2.0",
     "react-hanger": "^2.4.5",
     "tw-merge": "^0.0.1-alpha.3",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "vite-tsconfig-paths": "^4.3.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
