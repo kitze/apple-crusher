@@ -68,6 +68,10 @@ function App() {
     setImageHeight(100);
   };
 
+  const minWidth = 400;
+  const imagesWidth = 100 * (crushedImages.value.length + 1);
+  const width = Math.max(minWidth, imagesWidth);
+
   return (
     <div className="root bg-gray-900 h-screen w-screen vertical center">
       <Settings
@@ -79,7 +83,7 @@ function App() {
         restart={restart}
       />
 
-      <Crusher />
+      <Crusher width={width} />
       <Images
         images={
           direction === "increase"
@@ -88,7 +92,10 @@ function App() {
         }
         imageHeight={imageHeight}
       />
-      <div className="bg-gray-500 rounded-md h-12 w-80" />
+      <div
+        className="bg-gray-500 rounded-md h-12"
+        style={{ width, maxWidth: "90vw" }}
+      />
     </div>
   );
 }
