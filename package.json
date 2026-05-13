@@ -16,7 +16,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.1.9",
     "prettier": "^3.2.5",
-    "react": "^18.2.0",
+    "react": "^19.2.5",
     "react-dom": "^18.2.0",
     "react-hanger": "^2.4.5",
     "tw-merge": "^0.0.1-alpha.3",
